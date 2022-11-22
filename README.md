@@ -1,4 +1,4 @@
-ock# MLOps Pipeline
+# MLOps Pipeline
 The main reference are the courses I take, but the content is enriched from other internet sources.
 
 # Summary
