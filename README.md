@@ -1,7 +1,17 @@
-# MLOps Pipeline
+ock# MLOps Pipeline
+The main reference are the courses I take, but the content is enriched from other internet sources.
+
+# Summary
+- [Docker](#docker)
+- [AWS](#aws)
 
 ## Docker
-Full Hands-On Course: [Docker Containers and Kubernetes Fundamentals by freeCodeCamp.org](https://www.youtube.com/watch?v=kTp5xUtcalw&list=PLk9o62WclVKHv2B6bgCg58DevqemyI51a&index=1&t=212s)
+Reference -- Full Hands-On Course: [Docker Containers and Kubernetes Fundamentals by freeCodeCamp.org](https://www.youtube.com/watch?v=kTp5xUtcalw&list=PLk9o62WclVKHv2B6bgCg58DevqemyI51a&index=1&t=212s)
+
+## Docker Extension VSCode
+Docker extension in VSCode helps you with commands that run/build images and containers, creates necessary files (Dockerfile, .dockerignore, ...), etc. In addition, you can check the containers that are running, images, volumes, etc.
+
+--------
 
 ### Docker CLI Cheat Sheet - Running and Stopping
 |Command|Definition|
@@ -66,3 +76,47 @@ containerName -> webserver
 **Display**
 
 ` curl localhost:8080 `
+
+## Data persistence
+Explicar [...]
+
+### Volume Cheat Sheet
+|Command|Definition|
+|:--|:--|
+|docker create volume [volumeName]|Creates a new volume|
+|docker volume ls|List the volumes|
+|docker volume inspect [volumeName]|Display volume info|
+|docker volume rm [volumeName]|Deletes a volume|
+|docker volume prune|Deletes all volumes not mounted|
+
+### Mapping a volume
+**Create a volume**
+
+` docker volume create myvol `
+
+**Inspect volume**
+
+` docker volume inspect myvol `
+
+**List the volumes**
+
+` docker volume ls `
+
+**Run a container with a volume**
+
+` docker run -d --name devtest -v myvol:/app nginx:latest `
+-  **myvol:/app**: Related folder inside container
+
+# AWS
+Reference -- Course: [AWS Expert - #ChamaAsMina by LINUXtips](https://www.linuxtips.io/)
+
+## Core Concepts
+- Master Account: 
+- Organizational Unit (OU)
+- Accounts (Sub accounts):
+- Identity:
+- Resources:
+
+![AWS Organization](/assets/aws-organizations.png)
+
+Source: [AWS Website](https://aws.amazon.com/pt/blogs/architecture/field-notes-how-factset-balances-developer-velocity-with-governance-using-aws-iam/)
