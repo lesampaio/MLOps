@@ -8,6 +8,8 @@ The main reference are the courses I take, but the content is enriched from othe
 ## Docker
 Reference -- Full Hands-On Course: [Docker Containers and Kubernetes Fundamentals by freeCodeCamp.org](https://www.youtube.com/watch?v=kTp5xUtcalw&list=PLk9o62WclVKHv2B6bgCg58DevqemyI51a&index=1&t=212s)
 
+Extra -- [Alura: Docker Volume](https://www.alura.com.br/artigos/criando-volumes-com-docker)
+
 ## Docker Extension VSCode
 Docker extension in VSCode helps you with commands that run/build images and containers, creates necessary files (Dockerfile, .dockerignore, ...), etc. In addition, you can check the containers that are running, images, volumes, etc.
 
@@ -77,8 +79,10 @@ containerName -> webserver
 
 ` curl localhost:8080 `
 
-## Data persistence
-Explicar [...]
+## Docker Volume
+Creates a copy of the data that is in the container to the machine, because if the container fails or is removed, the information will be saved regardless of the state of the container. 
+
+This is based on data persistence, read more about it at [DataStax](https://www.datastax.com/blog/what-persistence-and-why-does-it-matter).
 
 ### Volume Cheat Sheet
 |Command|Definition|
