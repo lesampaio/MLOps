@@ -116,10 +116,34 @@ Reference -- Course: [AWS Expert - #ChamaAsMina by LINUXtips](https://www.linuxt
 
 ## Core Concepts
 - Master Account: 
-- Organizational Unit (OU)
-- Accounts (Sub accounts):
-- Identity:
+
+        Parent container for all the accounts for the organization.
+        Policy applied to the root is applied to all the organizational units (OUs) and accounts in the organization.
+        There can be only one root currently and AWS Organization automatically creates it when an organization is created.
+
+- Organizational Unit (OU): 
+
+        A container for accounts within a root.
+        An OU also can contain other OUs, enabling hierarchy creation that resembles an upside-down tree, with a root at the top and branches of OUs that reach down, ending in accounts that are the leaves of the tree.
+        A policy attached to one of the nodes in the hierarchy, flows down and affects all branches (OUs) and leaves (accounts) beneath it.
+
+- Accounts: 
+
+        A standard AWS account that contains AWS resources.
+        Each account can be directly in the root, or placed in one of the OUs in the hierarchy.
+        Policy can be attached to an account to apply controls to only that one account.
+        Accounts can be organized in a hierarchical, tree-like structure with a root at the top and organizational units nested under the root.
+
 - Resources:
+
+        In AWS, a resource is an entity that you can work with. Examples include an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket. If you work with multiple resources, you might find it useful to manage them as a group rather than move from one AWS service to another for each task.
+
+- Service Control Policies: 
+
+        A policy that specifies the services and actions that users and roles can use in the accounts that the SCP affects. SCPs are similar to IAM permissions policies except that they don't grant any permissions. 
+        Instead, SCPs specify the maximum permissions for an organization, organizational unit (OU), or account. When you attach an SCP to your organization root or an OU, the SCP limits permissions for entities in member accounts. 
+
+Reference: [Amazon AWS - Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html) | [Amazon AWS - Resource Groups](https://docs.aws.amazon.com/ARG/latest/userguide/resource-groups.html)
 
 ![AWS Organization](/assets/aws-organizations.png)
 
