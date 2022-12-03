@@ -6,9 +6,19 @@ The main reference are the courses I take, but the content is enriched from othe
 - [AWS](#aws)
 
 ## Docker
-Reference -- Full Hands-On Course: [Docker Containers and Kubernetes Fundamentals by freeCodeCamp.org](https://www.youtube.com/watch?v=kTp5xUtcalw&list=PLk9o62WclVKHv2B6bgCg58DevqemyI51a&index=1&t=212s)
+Principal reference -- Full Hands-On Course: [Docker Containers and Kubernetes Fundamentals by freeCodeCamp.org](https://www.youtube.com/watch?v=kTp5xUtcalw&list=PLk9o62WclVKHv2B6bgCg58DevqemyI51a&index=1&t=212s)
 
-Extra -- [Alura: Docker Volume](https://www.alura.com.br/artigos/criando-volumes-com-docker)
+![Docker pipeline](/assets/docker-pipeline.jpg)
+
+### What is a docker image?
+A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform. It provides a convenient way to package up applications and preconfigured server environments, which you can use for your own private use or share publicly with other Docker users. 
+
+Source: [Jfrog](https://jfrog.com/knowledge-base/a-beginners-guide-to-understanding-and-building-docker-images/)
+
+### What is a docker container and docker image? Other definition
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+
+Source: [Docker - Container](https://www.docker.com/resources/what-container/)
 
 ## Docker Extension VSCode
 Docker extension in VSCode helps you with commands that run/build images and containers, creates necessary files (Dockerfile, .dockerignore, ...), etc. In addition, you can check the containers that are running, images, volumes, etc.
@@ -80,7 +90,7 @@ containerName -> webserver
 ` curl localhost:8080 `
 
 ## Docker Volume
-Creates a copy of the data that is in the container to the machine, because if the container fails or is removed, the information will be saved regardless of the state of the container. 
+Creates a copy of the data that is in the container to the machine, because if the container fails or is removed, the information will be saved regardless of the state of the container. Read more on [Alura: Creating volumes with docker](https://www.alura.com.br/artigos/criando-volumes-com-docker)
 
 This is based on data persistence, read more about it at [DataStax](https://www.datastax.com/blog/what-persistence-and-why-does-it-matter).
 
@@ -110,6 +120,49 @@ This is based on data persistence, read more about it at [DataStax](https://www.
 
 ` docker run -d --name devtest -v myvol:/app nginx:latest `
 -  **myvol:/app**: Related folder inside container
+
+## Docker Compose
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application's services. 
+
+Source: [Compose documentation](https://docs.docker.com/compose/)
+
+### Docker compose - Use cases
+- Workloads that don't require full orchestrator
+- Development and tests
+- Use of a service that runs Docker Compose files
+ - Azure app service
+ - AWS ECS
+ - Virtual machines
+
+### Docker Compose Cheat Sheet
+|Command|Definition|
+|:--|:--|
+|docker compose build |Build the images|
+|docker compose start|Start the containers|
+|docker compose stop|Stop the containers|
+|docker compose up -d|Build and start|
+|docker compose ps|List running containers|
+|docker compose rm|Remove from memory|
+|docker compose down -d|Stop and remove|
+|docker compose logs|Display the logs from a container|
+|docker compose exec [container] bash|Run a command line in container|
+
+### Docker compose
+**Build the service**
+
+` docker compose build `
+
+**Builds, (re)creates, starts, attaches to containers for a service**
+
+` docker compose up `
+
+**List the services**
+
+` docker compose ls `
+
+**Bring down what was created by UP**
+
+` docker compose down `
 
 # AWS
 Reference -- Course: [AWS Expert - #ChamaAsMina by LINUXtips](https://www.linuxtips.io/)
