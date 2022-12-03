@@ -130,9 +130,9 @@ Source: [Compose documentation](https://docs.docker.com/compose/)
 - Workloads that don't require full orchestrator
 - Development and tests
 - Use of a service that runs Docker Compose files
- - Azure app service
- - AWS ECS
- - Virtual machines
+  - Azure app service
+  - AWS ECS
+  - Virtual machines
 
 ### Docker Compose Cheat Sheet
 |Command|Definition|
